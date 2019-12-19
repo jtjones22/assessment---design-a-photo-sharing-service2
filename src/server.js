@@ -12,8 +12,8 @@ const server = express();
 server
   .disable("x-powered-by")
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
-  .get("/api/images", getImages)
   .post("/api/images", postImages)
+  .get("/api/images", getImages)
   .use("/api", swaggerDocsRouter)
   .get("/*", (req, res) => {
     const context = {};
