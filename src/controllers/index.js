@@ -1,13 +1,9 @@
+import { getImagesResponse, postImageResponse } from '../apiStubs'
+
 export const getImages = (request, response) => {
-  response.send({
-    imageURIs: ["Ello"],
-    statusCode: 200
-  });
+  response.send(getImagesResponse);
 };
 
 export const postImages = (request, response) => {
-  response.send({
-    imageURI: "Testing",
-    statusCode: 200
-  });
+  response.send(postImageResponse);
 };
