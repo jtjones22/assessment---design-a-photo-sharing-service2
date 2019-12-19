@@ -4,6 +4,7 @@ import { StaticRouter } from "react-router-dom";
 import express from "express";
 import { renderToString } from "react-dom/server";
 import swaggerDocsRouter from "./swaggerDocsRouter";
+import { getImages, postImages } from "./controllers"
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
@@ -11,6 +12,8 @@ const server = express();
 server
   .disable("x-powered-by")
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .get("/api/Images", getImages)
+  .post("/api/Images", postImages)
   .use("/api", swaggerDocsRouter)
   .get("/*", (req, res) => {
     const context = {};
