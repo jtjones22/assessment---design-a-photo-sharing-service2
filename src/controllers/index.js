@@ -1,4 +1,4 @@
-export const getImages = (response, request) => {
+export const getImages = (request, response) => {
     response.send({
         "imageURIs": [
           "Ello"
@@ -7,7 +7,7 @@ export const getImages = (response, request) => {
       })
 }
 
-export const postImages = (response, request) => {
+export const postImages = (request, response) => {
     response.send({
         "imageURI": "Testing",
         "statusCode": 200
